@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Log in — Supply Chain Demand Forecasting System</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <div class="auth-shell">
+
+    <!-- Left: the login form -->
+    <div class="auth-shell__form">
+      <div class="auth-shell__form-inner">
+
+        <div class="brand">
+          <span class="brand__mark" aria-hidden="true"></span>
+          <span class="brand__name">Supply Chain Demand Forecasting</span>
+        </div>
+
+        <h1 class="auth-title">Log in</h1>
+        <p class="auth-subtitle">Access your dashboard with your registered account.</p>
+
+        <div class="alert alert--error" id="error-alert" role="alert" hidden></div>
+
+        <form id="login-form" novalidate>
+          <div class="field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" autocomplete="email" required />
+          </div>
+
+          <div class="field">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" autocomplete="current-password" required />
+          </div>
+
+          <button type="submit" class="btn" id="submit-btn">Log in</button>
+        </form>
+
+        <p class="auth-switch">
+          Don't have an account? <a href="register.html">Register here</a>
+        </p>
+
+      </div>
+    </div>
+
+    <!-- Right: quiet contextual panel -->
+    <div class="auth-shell__panel">
+      <div class="panel-quote">
+        <p class="panel-quote__text">
+          Every order, forecast, and procurement decision starts with knowing
+          exactly who's allowed to see and change what.
+        </p>
+        <p class="panel-quote__meta">Authentication &amp; Role Management module</p>
+      </div>
+
+      <div class="panel-status">
+        <div class="panel-status__row"><span class="dot" aria-hidden="true"></span> API status: <span id="status-api">checking connection</span></div>
+        <div class="panel-status__row"><span class="dot" aria-hidden="true"></span> Three roles configured: ADMIN, MANAGER, PLANNER</div>
+        <div class="panel-status__row"><span class="dot" aria-hidden="true"></span> Sessions run on signed JWT tokens</div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="js/api.js"></script>
+  <script src="js/login.js"></script>
+</body>
+</html>

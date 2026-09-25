@@ -1,0 +1,19 @@
+.DS_Store
+
+# Python
+__pycache__/
+*.py[cod]
+*.so
+.venv/
+venv/
+env/
+
+# Local configuration and data
+.env
+*.db
+*.sqlite
+*.sqlite3
+
+# IDE and tooling
+.vscode/
+.idea/

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard — Supply Chain Demand Forecasting System</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="topbar__inner">
+      <div class="brand">
+        <span class="brand__mark" aria-hidden="true"></span>
+        <span class="brand__name">Supply Chain Demand Forecasting</span>
+      </div>
+      <div class="topbar__user">
+        <span class="topbar__user-name" id="topbar-name">—</span>
+        <span class="role-badge" id="topbar-role" data-role="">—</span>
+        <button class="btn btn--ghost btn--small" id="logout-btn">Log out</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="main">
+
+    <div class="alert alert--error" id="dashboard-error" role="alert" hidden></div>
+
+    <!-- Profile summary, visible to every role -->
+    <section class="section">
+      <div class="section__header">
+        <h2 class="section__title">Your profile</h2>
+      </div>
+      <div class="panel">
+        <div class="stat-row" id="profile-stats">
+          <div class="stat">
+            <div class="stat__label">Loading</div>
+            <div class="stat__value">…</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Role-specific dashboard, filled in based on who's logged in -->
+    <section class="section" id="role-section" hidden>
+      <div class="section__header">
+        <h2 class="section__title" id="role-section-title">Dashboard</h2>
+        <span class="section__hint" id="role-section-hint"></span>
+      </div>
+      <div class="panel">
+        <ul class="feature-list" id="role-feature-list"></ul>
+      </div>
+    </section>
+
+    <!-- Admin-only user management table -->
+    <section class="section" id="admin-section" hidden>
+      <div class="section__header">
+        <h2 class="section__title">User management</h2>
+        <span class="section__hint">Admin only</span>
+      </div>
+      <div class="panel">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Role</th>
+              <th>Status</th>
+              <th>Joined</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="users-table-body">
+            <tr><td colspan="6" class="loading-row">Loading users…</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="js/api.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>
